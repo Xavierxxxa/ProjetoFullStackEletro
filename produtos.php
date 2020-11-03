@@ -53,8 +53,8 @@ die ("Falha na conexão com o BD " . mysqli_connect_errno());
             }
         ?>
 
-        <div class="produtos" style = "display:inline-block">
-            <div class="eletrodomesticos" id="geladeira" style = "display:inline-block">
+        <div class="produtos">
+            <div class="eletrodomesticos" id="geladeira">
             <img src="./imagens/geladeiraduasportas.jpeg" width="120px" onclick="destaque(this)">
             <br>
             <p >Geladeira Frost Free Brastemp Side Inverse 540 litros</p>
@@ -64,7 +64,7 @@ die ("Falha na conexão com o BD " . mysqli_connect_errno());
             </div>
 
 
-            <div class="eletrodomesticos" id="geladeira" style = "display:inline-block">
+            <div class="eletrodomesticos" id="geladeira">
             <img src="./imagens/geladeiracinza.jpeg" width="120px" onclick="destaque(this)">
             <br>
             <p>Geladeira Frost Free Consul Prata 400 litros</p> <!--Nome do produto-->
@@ -75,7 +75,7 @@ die ("Falha na conexão com o BD " . mysqli_connect_errno());
 
         
 
-            <div class="eletrodomesticos" id="geladeira" style = "display:inline-block">
+            <div class="eletrodomesticos" id="geladeira">
             <img src="./imagens/geladeirabranca.jpeg" width="120px" onclick="destaque(this)">
             <br>
             <p>Geladeira Frost Free Brastemp Branca 390 litros</p> <!--Nome do produto-->
@@ -85,7 +85,7 @@ die ("Falha na conexão com o BD " . mysqli_connect_errno());
             </div>
 
 
-            <div class="eletrodomesticos" id="fogao" style = "display:inline-block">
+            <div class="eletrodomesticos" id="fogao">
             <img src="./imagens/fogãoquatrobocas.jpeg" width="120px" onclick="destaque(this)">
             <br>
             <p>Fogão de 4 Bocas Atlas- Branco</p> <!--Nome do produto-->
@@ -96,7 +96,7 @@ die ("Falha na conexão com o BD " . mysqli_connect_errno());
 
 
 
-            <div class="eletrodomesticos" id="fogao" style = "display:inline-block">
+            <div class="eletrodomesticos" id="fogao">
             <img src="./imagens/fogãocinza.jpeg" width="120px" onclick="destaque(this)"><br>
             <p>Fogão de 4 Bocas Consul - Inox</p> <!--Nome do produto-->
             <hr>
@@ -106,7 +106,7 @@ die ("Falha na conexão com o BD " . mysqli_connect_errno());
 
 
 
-            <div class="eletrodomesticos" id="microondas" style = "display:inline-block">
+            <div class="eletrodomesticos" id="microondas">
             <img src="./imagens/microondasconsul.jpeg" width="120px" onclick="destaque(this)">
             <br>
             <p>Microondas Consul 32 litros - Inox - 220v</p> <!--Nome do produto-->
@@ -117,7 +117,7 @@ die ("Falha na conexão com o BD " . mysqli_connect_errno());
 
 
 
-            <div class="eletrodomesticos" id="microondas" style = "display:inline-block">
+            <div class="eletrodomesticos" id="microondas">
             <img src="./imagens/microondaseletrolux.jpeg" width="120px" onclick="destaque(this)">
             <br>
             <p>Microondas Eletrolux 28 litros - Espelhado - 110v</p> <!--Nome do produto-->
@@ -128,7 +128,7 @@ die ("Falha na conexão com o BD " . mysqli_connect_errno());
 
 
 
-            <div class="eletrodomesticos" id="microondas" style = "display:inline-block">
+            <div class="eletrodomesticos" id="microondas">
             <img src="./imagens/microondasphilco.jpeg" width="120px" onclick="destaque(this)">
             <br>
             <p>Microondas Philco 30 litros - Branco - Bivolt</p> <!--Nome do produto-->
@@ -139,7 +139,7 @@ die ("Falha na conexão com o BD " . mysqli_connect_errno());
 
 
 
-            <div class="eletrodomesticos" id="lavaroupa" style = "display:inline-block">
+            <div class="eletrodomesticos" id="lavaroupa">
             <img src="./imagens/lavaroupa(turbo).jpeg" width="120px" onclick="destaque(this)">
             <br>
             <p>Lava Roupas Brastemp 11kg - Turbo - Branca</p> <!--Nome do produto-->
@@ -150,7 +150,7 @@ die ("Falha na conexão com o BD " . mysqli_connect_errno());
 
 
 
-            <div class="eletrodomesticos" id="lavaroupa" style = "display:inline-block">
+            <div class="eletrodomesticos" id="lavaroupa">
             <img src="./imagens/lavaroupa.jpeg" width="120px" onclick="destaque(this)"><br>
             <p>Lava Roupas Philco 12 kg - Inverter - Branca</p> <!--Nome do produto-->
             <hr>
@@ -160,7 +160,7 @@ die ("Falha na conexão com o BD " . mysqli_connect_errno());
 
 
 
-            <div class="eletrodomesticos" id="lavalouça" style = "display:inline-block">
+            <div class="eletrodomesticos" id="lavalouça">
             <img src="./imagens/lavalouça.jpeg" width="120px" onclick="destaque(this)"><br>
             <p>Lava Louça Compacta Brastemp - 8 Serviços -Branca - 110v </p> <!--Nome do produto-->
             <hr>
@@ -170,7 +170,7 @@ die ("Falha na conexão com o BD " . mysqli_connect_errno());
 
 
 
-            <div class="eletrodomesticos" id="lavalouça" style = "display:inline-block, margin:10px">
+            <div class="eletrodomesticos" id="lavalouça">
             <img src="./imagens/frigobarconsul.jpeg" width="120px" onclick="destaque(this)">
             <br>
             <p>Lava Louça Consul - 14 Serviços - Inox - 220v</p> <!--Nome do produto-->
