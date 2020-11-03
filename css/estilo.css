@@ -30,18 +30,12 @@ body{
     text-align: center;
     font-size: 18px;
 }
-.produtos td{
-    width: 20%;
-    text-align: center;
-    vertical-align: bottom;
-}
-#categorias{
-    width: 20%;
-    text-align: left;
+.categorias{
     vertical-align: top;
 }
 .eletrodomesticos{
     font-size: small;
+    margin: 10px;
 }
 .preco{
     color: red;
