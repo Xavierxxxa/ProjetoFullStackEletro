@@ -33,7 +33,7 @@ die ("Falha na conexão com o BD " . mysqli_connect_errno());
             <li onclick="exibecategoria('fogao')">Fogões(2)</li>
             <li onclick="exibecategoria('microondas')">Microondas(3)</li>
             <li onclick="exibecategoria('lavaroupa')">Lavadouras de  Roupas(2)</li>
-            <li onclick="exibecategoria('lavalouça')">Lava-louças(2)</li>
+            <li onclick="exibecategoria('lavalouca')">Lava-louças(2)</li>
         </ul>
         </aside>
 </div> 
@@ -44,7 +44,14 @@ die ("Falha na conexão com o BD " . mysqli_connect_errno());
             if ($imprime->num_rows > 0){
                 while($rows = $imprime->fetch_assoc()){
                     ?>
-                <!--Aqui vai ficar o código de integração-->
+                <div class="eletrodomesticos" id="<?php echo $rows["categoria"];?>" style = "display:inline-block; margin:10px">
+                    <img src="<?php echo $rows["imagem"];?>" width="120px" onclick="destaque(this)">
+                    <br>
+                    <p><?php echo $rows["descricao"];?></p>
+                    <hr>
+                    <p><strike>R$ <?php echo $rows["preco"];?></strike></p>
+                    <p class="preco">R$ <?php echo $rows["precofinal"];?></p>
+                </div>
         <?php          
                 }
             }
@@ -53,132 +60,7 @@ die ("Falha na conexão com o BD " . mysqli_connect_errno());
             }
         ?>
 
-        <div class="produtos">
-            <div class="eletrodomesticos" id="geladeira">
-            <img src="./imagens/geladeiraduasportas.jpeg" width="120px" onclick="destaque(this)">
-            <br>
-            <p >Geladeira Frost Free Brastemp Side Inverse 540 litros</p>
-            <hr>
-            <p ><strike>R$ 6.389,00</strike></p>
-            <p class="preco">R$ 5.019,00</p>
-            </div>
-
-
-            <div class="eletrodomesticos" id="geladeira">
-            <img src="./imagens/geladeiracinza.jpeg" width="120px" onclick="destaque(this)">
-            <br>
-            <p>Geladeira Frost Free Consul Prata 400 litros</p> <!--Nome do produto-->
-            <hr>
-            <p><strike>R$ 2200,00</strike></p> <!--Preço Anterior-->
-            <p class="preco">R$ 2100,00</font>  <!--Preço atual-->
-            </div>
-
-        
-
-            <div class="eletrodomesticos" id="geladeira">
-            <img src="./imagens/geladeirabranca.jpeg" width="120px" onclick="destaque(this)">
-            <br>
-            <p>Geladeira Frost Free Brastemp Branca 390 litros</p> <!--Nome do produto-->
-            <hr>
-            <p><strike>R$ 2500,00</strike></p> <!--Preço Anterior-->
-            <p class="preco">R$ 2300,00</p>  <!--Preço atual-->
-            </div>
-
-
-            <div class="eletrodomesticos" id="fogao">
-            <img src="./imagens/fogãoquatrobocas.jpeg" width="120px" onclick="destaque(this)">
-            <br>
-            <p>Fogão de 4 Bocas Atlas- Branco</p> <!--Nome do produto-->
-            <hr>
-            <p><strike>R$ 670,00</strike></p> <!--Preço Anterior-->
-            <p class="preco">R$ 610,00</p>  <!--Preço atual-->
-            </div>
-
-
-
-            <div class="eletrodomesticos" id="fogao">
-            <img src="./imagens/fogãocinza.jpeg" width="120px" onclick="destaque(this)"><br>
-            <p>Fogão de 4 Bocas Consul - Inox</p> <!--Nome do produto-->
-            <hr>
-            <p><strike>R$ 1400,00</strike></p> <!--Preço Anterior-->
-            <p class="preco">R$ 1250,00</p>  <!--Preço atual-->
-            </div>
-
-
-
-            <div class="eletrodomesticos" id="microondas">
-            <img src="./imagens/microondasconsul.jpeg" width="120px" onclick="destaque(this)">
-            <br>
-            <p>Microondas Consul 32 litros - Inox - 220v</p> <!--Nome do produto-->
-            <hr>
-            <p><strike>R$ 600,00</strike></p> <!--Preço Anterior-->
-            <p class="preco">R$ 450,00</p>  <!--Preço atual-->
-            </div>
-
-
-
-            <div class="eletrodomesticos" id="microondas">
-            <img src="./imagens/microondaseletrolux.jpeg" width="120px" onclick="destaque(this)">
-            <br>
-            <p>Microondas Eletrolux 28 litros - Espelhado - 110v</p> <!--Nome do produto-->
-            <hr>
-            <p><strike>R$ 600,00</strike></p> <!--Preço Anterior-->
-            <p class="preco">R$ 530,00</p>  <!--Preço atual-->
-            </div>
-
-
-
-            <div class="eletrodomesticos" id="microondas">
-            <img src="./imagens/microondasphilco.jpeg" width="120px" onclick="destaque(this)">
-            <br>
-            <p>Microondas Philco 30 litros - Branco - Bivolt</p> <!--Nome do produto-->
-            <hr>
-            <p><strike>R$ 590,00</strike></p> <!--Preço Anterior-->
-            <p class="preco">R$ 500,00</p>  <!--Preço atual-->
-            </div>
-
-
-
-            <div class="eletrodomesticos" id="lavaroupa">
-            <img src="./imagens/lavaroupa(turbo).jpeg" width="120px" onclick="destaque(this)">
-            <br>
-            <p>Lava Roupas Brastemp 11kg - Turbo - Branca</p> <!--Nome do produto-->
-            <hr>
-            <p><strike>R$ 1600,00</strike></p> <!--Preço Anterior-->
-            <p class="preco">R$ 1400,00</p>  <!--Preço atual-->
-            </div>
-
-
-
-            <div class="eletrodomesticos" id="lavaroupa">
-            <img src="./imagens/lavaroupa.jpeg" width="120px" onclick="destaque(this)"><br>
-            <p>Lava Roupas Philco 12 kg - Inverter - Branca</p> <!--Nome do produto-->
-            <hr>
-            <p><strike>R$ 2000,00</strike></p> <!--Preço Anterior-->
-            <p class="preco">R$ 1500,00</p>  <!--Preço atual-->
-            </div>
-
-
-
-            <div class="eletrodomesticos" id="lavalouça">
-            <img src="./imagens/lavalouça.jpeg" width="120px" onclick="destaque(this)"><br>
-            <p>Lava Louça Compacta Brastemp - 8 Serviços -Branca - 110v </p> <!--Nome do produto-->
-            <hr>
-            <p><strike>R$ 1800,00</strike></p> <!--Preço Anterior-->
-            <p class="preco">R$ 1500</p>  <!--Preço atual-->
-            </div>
-
-
-
-            <div class="eletrodomesticos" id="lavalouça">
-            <img src="./imagens/frigobarconsul.jpeg" width="120px" onclick="destaque(this)">
-            <br>
-            <p>Lava Louça Consul - 14 Serviços - Inox - 220v</p> <!--Nome do produto-->
-            <hr>
-            <p><strike>R$ 3000,00</strike></p> <!--Preço Anterior-->
-            <p class="preco">R$ 2600,00</p>  <!--Preço atual-->
-            </div>
-        </div>
+       
 
 <br> 
 <footer id="rodapé">
