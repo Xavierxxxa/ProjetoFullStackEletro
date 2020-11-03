@@ -12,6 +12,7 @@ die ("Falha na conexão com o BD " . mysqli_connect_errno());
     <link rel="stylesheet" href="./css/estilo.css">
     <script src="./javascript/functions.js"></script>
 </head>
+
 <body>
   <!--Menu Principal-->
 <?php
@@ -23,7 +24,7 @@ die ("Falha na conexão com o BD " . mysqli_connect_errno());
 <h2>Produtos disponíveis </h2>
 <hr>
 
-<div class="categorias" style = "display:inline-block">
+<div class="categorias" >
     <aside>
     <h3>Categorias</h3>
         <ul>

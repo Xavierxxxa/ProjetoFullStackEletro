@@ -32,6 +32,7 @@ body{
 }
 .categorias{
     vertical-align: top;
+    display: inline-block;
 }
 .eletrodomesticos{
     font-size: small;
@@ -46,4 +47,7 @@ body{
 }
 #rodapé{
     text-align: center;
+}
+.produtos{
+    display:inline-block;
 }
