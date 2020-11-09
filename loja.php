@@ -13,7 +13,7 @@
     include_once 'menu.html';
 ?>
 <!--Fim do menu-->
-
+<div class="container-fluid"></div>
 <h2>Nossas lojas</h2>
 <table class="table table-bordered">
     <thead class="thead-light">
@@ -46,6 +46,7 @@
         </tr>
     </tbody>
 </table>
+</div>
 <br> <br><br><br><br>
 <br><br><br><br>  
 <?php
