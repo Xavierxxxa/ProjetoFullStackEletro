@@ -5,6 +5,7 @@
     <meta charset="utf-8" />
     <title>Full Stack Eletro</title>
     <link rel="stylesheet" href="./css/estilo.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
 <body>
 <!--Menu Principal-->
@@ -13,20 +14,17 @@
 ?>
 <!--Fim do menu-->
 
-<br><br><br><br>
 
-<main>
-    <h2>Seja bem vindxs</h2>
+
+<div class="container-fluid rounded bg-light">
+    <h2>Sejam bem vindxs</h2>
     <p> Nossa loja possui <b>desconto especiais para programadores!!!!</b></p>
-</main>
+</div>
 
 <br><br><br><br><br><br><br><br><br><br>
-<hr>
 <br><br><br>
-<footer id="rodapé">
-    <h4><p id="formasdepagamento">Formas de pagamento:</p></h4>
-    <img src= "imagens/formasdepagamento.jpeg" alt="Formas de pagamento" height="100px" width="200px">
-    <p>&copy; Recode Pro</p>
-</footer>
+<?php
+    include_once 'rodape.html';
+    ?>
 </body>
 </html> 

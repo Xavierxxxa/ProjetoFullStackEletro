@@ -9,8 +9,9 @@ die ("Falha na conexão com o BD " . mysqli_connect_errno());
 <head>
     <meta charset="utf-8" />
     <title>Produtos disponíveis</title>
-    <link rel="stylesheet" href="./css/estilo.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <script src="./javascript/functions.js"></script>
+    <link rel="stylesheet" href="./css/estilo.css">
 </head>
 
 <body>
@@ -24,19 +25,20 @@ die ("Falha na conexão com o BD " . mysqli_connect_errno());
 <h2>Produtos disponíveis </h2>
 <hr>
 
-<div class="categorias" >
-    <aside>
-    <h3>Categorias</h3>
-        <ul>
-            <li onclick="exibetodos()">Todos(12)</li>
-            <li onclick="exibecategoria('geladeira')">Geladeiras(3)</li>
-            <li onclick="exibecategoria('fogao')">Fogões(2)</li>
-            <li onclick="exibecategoria('microondas')">Microondas(3)</li>
-            <li onclick="exibecategoria('lavaroupa')">Lavadouras de  Roupas(2)</li>
-            <li onclick="exibecategoria('lavalouca')">Lava-louças(2)</li>
-        </ul>
-        </aside>
-</div> 
+<div class="container-fluid">
+<h3>Categorias</h3>
+    <div class="row ">
+        <div class="col">
+            <ul class ="nav flex-column">
+                <li class="nav-item" onclick="exibetodos()">Todos(12)</li>
+                <li class="nav-item" onclick="exibecategoria('geladeira')">Geladeiras(3)</li>
+                <li class="nav-item" onclick="exibecategoria('fogao')">Fogões(2)</li>
+                <li class="nav-item" onclick="exibecategoria('microondas')">Microondas(3)</li>
+                <li class="nav-item" onclick="exibecategoria('lavaroupa')">Lavadouras de  Roupas(2)</li>
+                <li class="nav-item" onclick="exibecategoria('lavalouca')">Lava-louças(2)</li>
+            </ul>
+        </div>
+
 
         <?php
             $select = "select * from eletrodomesticos";
@@ -44,14 +46,17 @@ die ("Falha na conexão com o BD " . mysqli_connect_errno());
             if ($imprime->num_rows > 0){
                 while($rows = $imprime->fetch_assoc()){
                     ?>
-                <div class="eletrodomesticos" id="<?php echo $rows["categoria"];?>" style = "display:inline-block; margin:10px">
+                <div class="eletrodomesticos col-md-auto" id="<?php echo $rows["categoria"];?>">
                     <img src="<?php echo $rows["imagem"];?>" width="120px" onclick="destaque(this)">
                     <br>
-                    <p><?php echo $rows["descricao"];?></p>
+                    <p class="p-0 m-0"><?php echo $rows["descricao"];?></p>
                     <hr>
-                    <p><strike>R$ <?php echo $rows["preco"];?></strike></p>
-                    <p class="preco">R$ <?php echo $rows["precofinal"];?></p>
+                    <p class="p-0 m-0"><strike>R$ <?php echo $rows["preco"];?></strike></p>
+                    <p class="text-danger m-0 p-0">R$ <?php echo $rows["precofinal"];?></p>
                 </div>
+                
+
+    
         <?php          
                 }
             }
@@ -60,14 +65,12 @@ die ("Falha na conexão com o BD " . mysqli_connect_errno());
             }
         ?>
 
-       
+</div>  
 
 <br> 
-<footer id="rodapé">
-    <h4><p id="formasdepagamento">Formas de pagamento:</p></h4>
-    <img src= "imagens/formasdepagamento.jpeg" alt="Formas de pagamento" height="100px" width="200px">
-    <p>&copy; Recode Pro</p>
-</footer>
+<?php
+    include_once 'rodape.html';
+    ?>
 
 </body>
 </html> 

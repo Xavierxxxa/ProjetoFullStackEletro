@@ -18,6 +18,7 @@ if(isset($_POST['nome']) && isset($_POST['msg'])){
     <meta charset="utf-8" />
     <title>Contatos</title>
     <link rel="stylesheet" href="./css/estilo.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
 <body>
    <!--Menu Principal-->
@@ -27,27 +28,29 @@ if(isset($_POST['nome']) && isset($_POST['msg'])){
 <!--Fim do menu-->
 
 <h2> Fale Conosco</h2>
-    <hr>
-<table class="tabela2 contato">
-    <tr>
-        <td>
-            <img src="./imagens/logowpp.jpg" width="90px">
-            <p>(11)972998084</p>
-        </td>
-        <td>
-            <img src="./imagens/logoemail.png" width="40px">
-            <p>fullstackjoias@recodepro.com</p>
-        </td>
-    </tr>
+<div class="container-fluid">
+    <table class="table">
+        <tr>
+            <td>
+                <img src="./imagens/logowpp.jpg" width="90px">
+                <p>(11)972998084</p>
+            </td>
+            <td>
+                <img src="./imagens/logoemail.png" width="40px">
+                <p>fullstackjoias@recodepro.com</p>
+            </td>
+        </tr>
+    </table> 
 
-</table> 
-<form method="post" action ="">
-    <h4>Nome: </h4>
-    <input type="text" style="width:400px;" name = "nome">
-    <h4>Mensagem:</h4>
-    <textarea style="width:400px;" name = "msg"></textarea>
-    <input type="submit" name= "submit" value="Enviar">
-</form> 
+    <form method="post" action ="">
+    <div class="form-group">
+        <h4>Nome: </h4>
+        <input type="text" style="width:400px;" name = "nome">
+        <h4>Mensagem:</h4>
+        <textarea style="width:400px;" name = "msg"></textarea>
+        <input type="submit" name= "submit" value="Enviar">
+    </div>
+    </form> 
 
 <?php
             $select = "select * from comentarios";
@@ -61,16 +64,14 @@ if(isset($_POST['nome']) && isset($_POST['msg'])){
                 }
             }
             else {
-                echo "Nenhum produto cadastrado!";
+                echo "Nenhuma mensagem ainda :(";
             }
         ?>
+</div>
 
 <br><br><br><br><br><br>
-<hr>
-<footer id="rodapé">
-    <h4><p id="formasdepagamento">Formas de pagamento:</p></h4>
-    <img src= "imagens/formasdepagamento.jpeg" alt="Formas de pagamento" height="100px" width="200px">
-    <p>&copy; Recode Pro</p>
-</footer>
+<?php
+    include_once 'rodape.html';
+    ?>
 </body>
 </html> 
