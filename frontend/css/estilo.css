@@ -1,0 +1,17 @@
+body, html{
+    height: 100%;
+}
+#root{
+    height: 100%;
+}   
+.App{
+    height: 80%;
+}
+.main{
+    height: 75%;
+}
+#Brand{
+    font-family: fantasy;
+    font-weight: 900;
+    font-stretch: ultra-expanded;
+}
