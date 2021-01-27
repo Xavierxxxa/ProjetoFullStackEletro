@@ -2,23 +2,29 @@ const Main = () =>{
     const [coments, setComents] = React.useState([]);
     const [render, setRender] = React.useState(false);
     const [msg, setMsg] = React.useState(false);  
+    const [message, setMessage] = React.useState('');
+    const [name, setName] = React.useState('');
 
-    React.useEffect(async ()=>{
-        const url = "http://projetos/FullStackJoias/backend/";
+    React.useEffect(async ()=>{ //Listar as mensagens
+        const url = "http://localhost:5000/comentarios"; //Teste com NODEJS
         const response = await fetch(url);
         setComents(await response.json());
     }, [render]);
 
-    async function registerComents(event){
+    async function registerComents(event){   //Enviar as mensagens
         event.preventDefault();
 
-        let formData = new FormData(event.target);
+        let formData = {
+            nome: name,
+            msg: message,
+        };
 
-        const url = "http://projetos/FullStackJoias/backend/register-coments.php";
+        const url = "http://localhost:5000/comentarios"; //PHP: http://projetos/FullStackJoias/backend/register-coments.php
 
         fetch(url,{
             method: "POST",
-            body: formData
+            headers: { "Content-Type": "application/json"}, //
+            body: JSON.stringify(formData) //Função que converte os resultados JSON para valores JavaScript 
         }).then((response)=> response.json()).then((dados)=>{
             setRender(!render);
             setMsg(dados);
@@ -30,7 +36,7 @@ const Main = () =>{
     }
 
     return(
-        <div className="container">
+        <div className="container">            
             <table class="table">
                 <tr>
                     <td>
@@ -43,33 +49,39 @@ const Main = () =>{
                     </td>
                 </tr>
             </table>
-            <div className="card">
-                <form onSubmit={registerComents}>
-                    <input className="form-control mt-2" type="text" name="nome" placeholder="Digite seu nome aqui"/>    
-                    <textarea className="form-control mt-2" name="msg" id="msg" cols="30" rows="10" placeholder="Elogios, críticas, dúvidas"></textarea>
-                    <button className="btn btn-info w-100 mt-2" >Enviar Mensagem</button>
-                </form>    
-            </div>  
+            <div className="row">
+                <div className="col">
+                <div className="card">
+                        <form onSubmit={registerComents}>
+                            <input className="form-control mt-2" type="text" name={name} placeholder="Digite seu nome aqui"  onChange={event=>setName(event.target.value)}/> 
+                            <textarea className="form-control mt-2" name={message} id="msg" cols="30" rows="4" placeholder="Elogios, críticas, dúvidas" onChange={event=>setMessage(event.target.value)} ></textarea>
+                            <button className="btn btn-info w-100 mt-2" >Enviar Mensagem</button>
+                        </form>    
+                    </div>  
 
-            {
-                msg && <div className="alert alert-success mx-auto mt-4 w-75" role="alert">
-                    Mensagem enviada com sucesso!
+                    {
+                        msg && <div className="alert alert-success mx-auto mt-4 w-75" role="alert">
+                            Mensagem enviada com sucesso!
+                        </div>
+                    }
                 </div>
-            }
-            <h5>Avaliações: </h5>
-            {coments.map((elements) =>{
-                return(
-                    <div className="card">
-                        <div className="card-header">
-                            Nome: {elements.nome}
-                        </div>
-                        <div className="card-body">
-                            Mensagem: {elements.msg} <br/>
-                            Data: {elements.hora}
-                        </div>
-                    </div>
-                )
-            })}     
+                <div className="col">
+                    <h5 className="text-center">Avaliações: </h5>
+                    {coments.map((elements) =>{
+                        return(
+                            <div className="card bg-secondary text-white border-light">
+                                <div className="card-header">
+                                    Nome: {elements.nome}
+                                </div>
+                                <div className="card-body">
+                                    Mensagem: {elements.msg} <br/>
+                                    Data: {elements.hora}
+                                </div>
+                            </div>
+                        )
+                    })}
+                </div>
+            </div>         
         </div>
     );
 }

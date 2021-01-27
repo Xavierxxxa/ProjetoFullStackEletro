@@ -2,7 +2,7 @@ const Produtos = () =>{
     const [produtos, setProdutos] = React.useState([]);
 
     React.useEffect(async ()=>{
-        const url = "http://projetos/FullStackJoias/backend/eletro.php";
+        const url = "http://localhost:5000/produtos";
         const response = await fetch(url);
         setProdutos(await response.json());
     }, []);
