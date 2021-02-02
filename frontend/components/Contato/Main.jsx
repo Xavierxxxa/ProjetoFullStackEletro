@@ -6,7 +6,7 @@ const Main = () =>{
     const [name, setName] = React.useState('');
 
     React.useEffect(async ()=>{ //Listar as mensagens
-        const url = "http://localhost:5000/comentarios"; //Teste com NODEJS
+        const url = "http://localhost:3333/comentarios"; //Teste com NODEJS
         const response = await fetch(url);
         setComents(await response.json());
     }, [render]);
@@ -19,7 +19,7 @@ const Main = () =>{
             msg: message,
         };
 
-        const url = "http://localhost:5000/comentarios"; //PHP: http://projetos/FullStackJoias/backend/register-coments.php
+        const url = "http://localhost:3333/comentarios"; //PHP: http://projetos/FullStackJoias/backend/register-coments.php
 
         fetch(url,{
             method: "POST",
