@@ -1,6 +1,5 @@
 const app = require("./src/config/server")
 const connection = require("./src/config/connection")
-const Produtos = require("./src/Models/Produtos")
 const Coments = require("./src/Models/Coments");
 
 
